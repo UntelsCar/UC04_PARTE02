@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title  %}
+            {% endblock %}
+             | TPB
+        </title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    </head>
+    <body>
+        <header>
+            <div id="logotipo">
+                <img src="{% static 'images/LOGO_UNTELS.png' %}" />
+                <h1>EC04 (LP3)</h1>
+            </div>
+        </header>
+    
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'integrantes' %}"> Integrantes</a>
+                 </li>
+                 <li>
+                    <a href="{% url 'saludo' %}"> Saludo</a>
+                 </li>
+            
+            </ul>
+        </nav>
+
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+        </div>
+    
+        <div id="content">
+            <div class="box">
+
+            {% block content %}
+           
+            {% endblock %}
+        </div>
+        </div>
+        <footer>
+            EC4 - Lenguaje de Programación III &copy; TPB - {% now "d/m/Y h:m:s" %}
+        </footer>
+    </body>
+</html>
+
